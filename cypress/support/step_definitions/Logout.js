@@ -12,15 +12,11 @@ When("Click on signUp button", () => {
     .should("contain.text", "Sign In / Join AJIO")
     .click();
 });
-And("Put your Email", () => {
+And("Login to your account", () => {
   cy.xpath("//input[contains(@name,'username')]").type(
     "sukhmani.dev006@gmail.com"
   );
-});
-And("Click Continue", () => {
   cy.xpath("//input[@value='Continue']").click();
-});
-And("click on with Password", () => {
   cy.xpath("//input[@placeholder='Enter OTP']").should(
     "have.attr",
     "placeholder",
@@ -33,22 +29,21 @@ And("click on with Password", () => {
   cy.xpath("//input[@value='LOGIN WITH PASSWORD']")
     .should("have.value", "LOGIN WITH PASSWORD")
     .click({ force: true });
-});
-And("put otp",()=>{
-  cy.wait(15000);
-})
-
-And("Put Password", () => {
   cy.xpath("//input[@id='pwdInput']").type("hello122#", { force: true });
   cy.xpath("(//label[@class='label-pwd'])[2]").should(
     "have.text",
     " Enter captcha"
   );
   cy.wait(15000);
-});
-Then("Click on Start shopping", () => {
   cy.xpath("//input[contains(@value,'START SHOPPING')]").click();
   cy.xpath("//span[@class='ignore-sentence-case']")
     .should("be.visible")
     .and("have.text", "Sukhmani");
+});
+
+Then("logout and get back to homepage", () => {
+  cy.get(".guest-header > ul > :nth-child(3)")
+    .should("be.visible")
+    .click({ force: true });
+  cy.url().should("include", "ajio");
 });
