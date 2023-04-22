@@ -5,8 +5,11 @@ Feature: Login of AJIO
         And Put your Email
         And Click Continue
     Scenario: Successful Login with valid Email
-    And click on with Password
+      And click on with Password
         And Put Password
         Then Click on Start shopping
         
         # Then user 
+        Scenario: Successful Login with otp
+        And put otp
+        Then Click on Start shopping

@@ -16,8 +16,8 @@ And("verify the carousel on the page", () => {
     .find(".each-slideshow-indicator")
     .each((el) => {
       cy.wrap(el).should("have.class", "false").click();
-    //   cy.wrap(el, { timeout: 10000 }).should("have.class", "active");
-    })
+      //   cy.wrap(el, { timeout: 10000 }).should("have.class", "active");
+    });
 });
 And("Verify the different sections on the page when you scroll", () => {});
 Then("Log all sections to the console", () => {});
