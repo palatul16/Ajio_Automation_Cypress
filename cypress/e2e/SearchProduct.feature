@@ -24,3 +24,14 @@ Feature:to validate and verify Ajio ecommerce
         And getproductsize
         Then getproductdetail
 
+    Scenario: Adding the product to the wishlist/ favorites
+        When  verify favorites
+        And click favorites
+        Then verify ui chage on favorites after click
+
+    Scenario:Add the product to the cart
+        When  add product into cart
+        And   ui change on top of cart icon
+        Then  UI change on the add to cart button as go to cart
+
+
