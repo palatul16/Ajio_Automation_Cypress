@@ -1,7 +1,5 @@
 Feature:to validate and verify Ajio ecommerce
-
-
-    Scenario:Searching for a particular product
+    Background: Ajio
         Given openbrowser and navigate website
         When  verify search bar
         And  validate search by product
@@ -10,4 +8,7 @@ Feature:to validate and verify Ajio ecommerce
 
 
 
-
+    Scenario:Add the product to the cart
+        When  add product into cart
+        And   ui change on top of cart icon
+        Then  UI change on the add to cart button as go to cart
