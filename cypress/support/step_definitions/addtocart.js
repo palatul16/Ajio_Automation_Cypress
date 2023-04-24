@@ -34,7 +34,15 @@ Then("validate filter by name", () => {
     cy.get('#Men').check({ force: true })
 
 })
+When("add product into cart", () => {
+    cy.wait(5000)
+    cy.get(".item").eq(0).find("a[href='/free-authority-men-marvel-comics-snapback-cap/p/465075481_green']").invoke('removeAttr', 'target').click()
+    cy.get(".btn-gold").click()
+})
+And("ui change on top of cart icon", () => {
+    cy.get("a[href='/cart']").should("exist")
+})
+Then("UI change on the add to cart button as go to cart", () => {
+    cy.get(".pdp-addtocart-button").should('have.text', 'GO TO BAG')
 
-
-
-
+})

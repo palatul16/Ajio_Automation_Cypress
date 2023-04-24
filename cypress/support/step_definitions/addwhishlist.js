@@ -36,5 +36,17 @@ Then("validate filter by name", () => {
 })
 
 
+When("verify favorites", () => {
+    cy.wait(5000)
+    cy.get(".item").eq(0).find("a[href='/free-authority-men-marvel-comics-snapback-cap/p/465075481_green']").invoke('removeAttr', 'target').click()
+    cy.get(".pdp-wishlist-desktop-icon").should('have.text', 'SAVE TO WISHLIST')
+})
 
+And("click favorites", () => {
+    cy.get(".pdp-wishlist-desktop-icon").click()
 
+})
+Then("verify ui chage on favorites after click", () => {
+    cy.get(".pdp-wishlist-desktop-icon").should('have.text', 'REMOVE FROM WISHLIST')
+
+})    
