@@ -1,13 +1,13 @@
 # Ajio Automation with Cypress 🌐
 
-Welcome to the **Ajio Automation with Cypress** repository! This project leverages Cypress and BDD with Cucumber to automate various functionalities of the Ajio e-commerce platform.
+Welcome to the **Ajio Automation with Cypress** repository! This project leverages Cypress and **BDD with Cucumber** to automate various functionalities of the Ajio e-commerce platform.
 
 ## Project Overview 📚
 
 This project is designed to:
 
 - **Automate Test Cases**: Implement end-to-end test automation for the Ajio platform using Cypress.
-- **Behavior-Driven Development (BDD)**: Utilize Cucumber to write human-readable tests that describe the behavior of the application.
+- **Behavior-Driven Development (BDD)**: Utilize Cucumber to write human-readable tests that describe the application's behavior.
 - **Ensure Quality**: Enhance the quality and reliability of the Ajio platform through rigorous automated testing.
 
 ## Features ✨
